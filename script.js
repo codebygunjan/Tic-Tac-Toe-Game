@@ -3,6 +3,10 @@ let resetbtn = document.querySelector("#reset");
 let newGamebtn = document.querySelector("#new-btn");
 let msg = document.querySelector("#msg");
 let msgContainer = document.querySelector(".msg-container");
+let moveSound = new Audio("move.mp3");
+let drawSound = new Audio("draw.mp3");
+let winSound = new Audio("win.mp3");
+let newSound = new Audio("new.mp3");
 
 let turnO = true; //true = O's turn, false = X's turn
 count = 0;
@@ -24,7 +28,7 @@ boxes.forEach((box) => {
       box.style.color = "black";
       box.style.webkitTextStroke = "2px white";
     }
-
+    moveSound.play();
     box.disabled = true; // disable the box after click
     count++;
     checkWinner();
@@ -62,6 +66,7 @@ const checkWinner = () => {
 };
 
 const showWinner = (winner) => {
+  winSound.play();
   msg.innerText = `Congratulations! Winner is ${winner}`;
   msgContainer.classList.remove("hide");
   msgContainer.classList.add("show-winner");
@@ -87,12 +92,14 @@ const resetGame = () => {
   count = 0;    // reset move count
   winnerFound = false; // reset winner 
   enableboxes();
+  newSound.play();
   msgContainer.classList.add("hide");
   msgContainer.classList.remove("show-winner");
   msgContainer.classList.remove("show-draw"); // hide draw message on reset
 };
 
 const showDraw = () => {
+  drawSound.play();
   msg.innerText = "Eventually, it's a Draw!";
   msgContainer.classList.remove("hide");
   msgContainer.classList.add("show-draw");
