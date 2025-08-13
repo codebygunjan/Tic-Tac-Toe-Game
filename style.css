@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #326074, #21404a, #0f2027);
+  text-align: center;
+}
+
+.container {
+  height: 70vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.box {
+  height: 19vmin;
+  width: 19vmin;
+  border-radius: 1rem;
+  border: none;
+  font-size: 9.9vmin;
+  color: black;
+  box-shadow: -6px 0px 8px rgba(0, 0, 0, 0.4);
+  background-color: white;
+}
+
+#reset {
+  background: linear-gradient(135deg, #004aad, #0073e6); /* gradient */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  margin-bottom: 5vmin;
+}
+
+#reset:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+  color: bisque;
+  font-size: 8vmin;
+}
+
+#new-btn {
+  background: linear-gradient(135deg, #004aad, #0073e6); /* gradient */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 15px; /* pill shape */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#new-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+#msg {
+  color: whitesmoke;
+  font-size: 9.7vmin;
+}
+
+.msg-container {
+  height: 120vmin;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes winnerAnimation {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.show-winner {
+  animation: winnerAnimation 0.6s ease-in-out forwards;
+  text-shadow: 3px 6px 4px black, 0px 0px 10px rgba(37, 32, 32, 0.5);
+}
+
+@keyframes drawAnimation {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.show-draw {
+  animation: drawAnimation 0.6s ease-in-out forwards;
+  text-shadow: 3px 6px 4px black, 0px 0px 10px rgba(37, 32, 32, 0.5);
+}
+
